@@ -61,22 +61,6 @@ public class ListaArregloOrdenada<T extends Comparable<T>> {
 		datos = datosMasGrandes;
 	}
 
-	public boolean addR(T x, int pos) {
-		boolean res = false;
-
-		if (n == datos.length) {
-			expandCapacity();
-		}
-		if (pos >= 0) {
-			ManArrT.elementsToRight(datos, n, pos);
-			datos[pos] = x;
-			n++;
-			res = true;
-		}
-
-		return res;
-	}
-
 	public T remove(T x) {
 		int pos;
 

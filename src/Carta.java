@@ -8,12 +8,16 @@ public class Carta implements Comparable <Carta>{
 	private String expansion;
 	private boolean stEdi;
 	private int cantidad;
+	private static int generaid=1;
+	private int id;
 
 	public Carta(){
-		
+		id=generaid;
+		generaid++;
 	}
 	
 	public Carta(String nombre, String rareza, String expansion, boolean stEdi, int cantidad){
+		this();
 		this.nombre=nombre;
 		this.rareza=rareza;
 		this.expansion=expansion;
@@ -61,9 +65,27 @@ public class Carta implements Comparable <Carta>{
 		this.cantidad=cantidad;
 	}
 	
+	public int getID(){
+		return id;
+	}
+	
+	public void setID(int id){
+		this.id = id;
+	}
 	
 	public int compareTo(Carta otro){
-		return this.expansion.compareTo(otro.expansion);
+		int res=-1;
+		
+		if(this.id>otro.id){
+			res=1;
+		}
+		else{
+			if(this.id==otro.id){
+				res=0;
+			}
+		}
+		
+		return res;
 	}
 	
 	public String toString(){
@@ -79,6 +101,7 @@ public class Carta implements Comparable <Carta>{
 		else{
 			cad.append("\nUnlimited\n");
 		}
+		cad.append("ID: "+id);
 		
 		return cad.toString();
 	}
@@ -87,8 +110,7 @@ public class Carta implements Comparable <Carta>{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((expansion == null) ? 0 : expansion.hashCode());
+		result = prime * result + id;
 		return result;
 	}
 
@@ -101,11 +123,10 @@ public class Carta implements Comparable <Carta>{
 		if (getClass() != obj.getClass())
 			return false;
 		Carta other = (Carta) obj;
-		if (expansion == null) {
-			if (other.expansion != null)
-				return false;
-		} else if (!expansion.equals(other.expansion))
+		if (id != other.id)
 			return false;
 		return true;
 	}
+
+	
 }

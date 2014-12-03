@@ -29,23 +29,16 @@ public class ListadoCartas {
 		int i = 0;
 		boolean ans = false;
 
-		while (i < cartas.size() && !cartas.get(i).getExpansion().equals(expansion) /**/) {
+		x = new Carta(nombre, rareza, expansion, stEdi, cantidad);
+		while (i < cartas.size() && !cartas.get(i).getExpansion().equals(expansion)) {
 			i++;
 		}
-		if (i >= cartas.size()) {
-			x = new Carta(nombre, rareza, expansion, stEdi, cantidad);
-			ans = cartas.add(x);
+		if (i<cartas.size() && cartas.get(i).getStEdi() == stEdi && cartas.get(i).getRareza().equals(rareza)) {
+			cartas.get(i).setCantidad(cartas.get(i).getCantidad() + cantidad);
+			x.setID(cartas.get(i).getID());
 		}
-		else {
-			if (cartas.get(i).getStEdi() == stEdi && cartas.get(i).getRareza().equals(rareza)) {
-				cartas.get(i).setCantidad(cartas.get(i).getCantidad() + cantidad);
-			} 
-			else {
-				x = new Carta(nombre, rareza, expansion, stEdi, cantidad);
-				ans = cartas.addR(x, i);
-			}
-		}
-
+		ans = cartas.add(x);
+		
 		return ans;
 	}
 
@@ -75,7 +68,7 @@ public class ListadoCartas {
 		else{
 			for (int i = 0; i < cartas.size(); i++) {
 				if (cartas.get(i).getNombre().equals(carta)) {
-					res.addR(cartas.get(i),0);
+					res.add(cartas.get(i));
 				}
 			}
 		}
