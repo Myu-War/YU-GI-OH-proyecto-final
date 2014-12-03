@@ -73,7 +73,7 @@ public class Playground extends JFrame {
 		this.add(p);
 
 		// visualizacion
-		setBounds(300, 300, 350, 500);
+		setBounds(300, 300, 350, 200);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
