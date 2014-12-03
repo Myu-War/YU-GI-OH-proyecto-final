@@ -6,8 +6,8 @@ import java.awt.GridLayout;
 public class AñadirCartaVista extends JFrame {
 	protected JLabel nomLb, rarLb, expLb, stLb, canLb;
 	protected JTextField nomTxt, rarTxt, expTxt, stTxt, canTxt;
-	protected JButton a = new JButton("Añadir");
-	protected JButton r = new JButton("Regresar");
+	protected JButton añadir = new JButton("Añadir");
+	protected JButton regresar = new JButton("Regresar");
 	
 	public AñadirCartaVista() {
 		super("Añadir Carta");
@@ -23,8 +23,8 @@ public class AñadirCartaVista extends JFrame {
 		stTxt = new JTextField(5);
 		canLb = new JLabel("Cantidad:");
 		canTxt = new JTextField(3);
-		r.setBackground(java.awt.Color.red);
-		a.setBackground(java.awt.Color.green);
+		regresar.setBackground(java.awt.Color.red);
+		añadir.setBackground(java.awt.Color.green);
 
 		// adiciona al contenedor: JPanel
 		JPanel p = new JPanel();
@@ -42,8 +42,8 @@ public class AñadirCartaVista extends JFrame {
 		p.add(stTxt);
 		p.add(canLb);
 		p.add(canTxt);
-		p.add(a);
-		p.add(r);
+		p.add(añadir);
+		p.add(regresar);
 		this.add(p);
 
 		// visualizacion

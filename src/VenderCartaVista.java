@@ -6,8 +6,8 @@ import java.awt.GridLayout;
 public class VenderCartaVista extends JFrame {
 	protected JLabel cantidadLb;
 	protected JTextField cantidadTxt;
-	protected JButton v = new JButton("Vender");
-	protected JButton r = new JButton("Regresar");
+	protected JButton vender = new JButton("Vender");
+	protected JButton regresar = new JButton("Regresar");
 	
 	public VenderCartaVista(){
 		super("Vender");
@@ -15,8 +15,8 @@ public class VenderCartaVista extends JFrame {
 		//creacion de componentes
 		cantidadLb=new JLabel("Cantidad:");
 		cantidadTxt=new JTextField(3);
-		r.setBackground(java.awt.Color.red);
-		v.setBackground(java.awt.Color.yellow);
+		regresar.setBackground(java.awt.Color.red);
+		vender.setBackground(java.awt.Color.yellow);
 		
 		//adiciona al contenedor: JPanel
 		JPanel p=new JPanel();
@@ -26,8 +26,8 @@ public class VenderCartaVista extends JFrame {
 		
 		p.add(cantidadLb);
 		p.add(cantidadTxt);
-		p.add(v);
-		p.add(r);
+		p.add(vender);
+		p.add(regresar);
 		this.add(p);
 		
 		//visualizacion

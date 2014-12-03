@@ -10,12 +10,12 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 	
 	public AñadirCartaControlador(){
 		super();
-		r.addActionListener(new EscuchadorB());
-		a.addActionListener(new EscuchadorB());
+		regresar.addActionListener(new EscuchadorB());
+		añadir.addActionListener(new EscuchadorB());
 	}
 	
 	private class EscuchadorB implements ActionListener {
-		protected JOptionPane op= new JOptionPane();
+		protected JOptionPane mensajeEmergente= new JOptionPane();
 		public void actionPerformed(ActionEvent ae) {
 			String nombre, rareza, expansion;
 			boolean edition;
@@ -26,7 +26,7 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 			}
 			if (ae.getActionCommand().equals("Añadir")) {
 				if(nomTxt.getText().equals("") || rarTxt.getText().equals("") || expTxt.getText().equals("") || stTxt.getText().equals("") || canTxt.getText().equals("") ){
-					op.showMessageDialog(a,"Llena todos los espacios", "ERROR", JOptionPane.ERROR_MESSAGE);
+					mensajeEmergente.showMessageDialog(añadir,"Llena todos los espacios", "ERROR", JOptionPane.ERROR_MESSAGE);
 				}
 				else{
 					nombre = nomTxt.getText();
@@ -40,7 +40,8 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 					System.out.println("Expansion: "+expansion);
 					System.out.println("1st Edition: "+edition);
 					System.out.println("Cantidad: "+cantidad);
-					op.showMessageDialog(a,"Carta Añadida");
+					mensajeEmergente.showMessageDialog(añadir,"Carta Añadida");
+					
 					dispose();
 					AñadirCartaControlador yo = new AñadirCartaControlador();
 				}

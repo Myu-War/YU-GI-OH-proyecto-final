@@ -1,17 +1,17 @@
 2
-summon-skull
+summon skull
 secreta
 NECH3
 5
 true
-giant-rat
+giant rat
 comun
 jk52
 5
 false
 1
 3
-giant-rat
+giant rat
 rara
 jk52
 4

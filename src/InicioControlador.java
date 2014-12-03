@@ -8,8 +8,8 @@ public class InicioControlador extends InicioVista {
 	
 	public InicioControlador(){
 		super();
-		b.addActionListener(new EscuchadorRes());
-		a.addActionListener(new EscuchadorRes());
+		buscar.addActionListener(new EscuchadorRes());
+		añadirC.addActionListener(new EscuchadorRes());
 	}
 	
 	private class EscuchadorRes implements ActionListener {

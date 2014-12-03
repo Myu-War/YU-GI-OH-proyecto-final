@@ -6,8 +6,8 @@ import javax.swing.border.Border;
 public class InicioVista extends JFrame {
 	protected JLabel nombreLb;
 	protected JTextField nombreTxt;
-	protected JButton b = new JButton("Buscar");
-	protected JButton a = new JButton("Añadir Carta(s)");
+	protected JButton buscar = new JButton("Buscar");
+	protected JButton añadirC = new JButton("Añadir Carta(s)");
 
 	public InicioVista() {
 		super("Inicio");
@@ -15,8 +15,8 @@ public class InicioVista extends JFrame {
 		// creacion de componentes
 		nombreLb = new JLabel("Nombre:");
 		nombreTxt = new JTextField(50);
-		b.setBackground(java.awt.Color.yellow);
-		a.setBackground(java.awt.Color.green);
+		buscar.setBackground(java.awt.Color.yellow);
+		añadirC.setBackground(java.awt.Color.green);
 		
 		// adiciona al contenedor: JPanel
 		JPanel p = new JPanel();
@@ -26,8 +26,8 @@ public class InicioVista extends JFrame {
 
 		p.add(nombreLb);
 		p.add(nombreTxt);
-		p.add(b);
-		p.add(a);
+		p.add(buscar);
+		p.add(añadirC);
 		this.add(p);
 
 		// visualizacion

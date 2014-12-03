@@ -17,14 +17,14 @@ public class EjecutableListadoCartas {
 
 		try {
 			lec = new Scanner(ent);
-		} catch (FileNotFoundException fnfe) {
+		} catch (FileNotFoundException fnfe) {	
 			System.err.println("ERROR" + fnfe);
 			System.exit(-1);
 		}
 		auxN = lec.nextInt();
 		System.out.println(auxN);
 		for (int i = 1; i <= auxN; i++) {
-			nombre = lec.next();
+			nombre = lec.nextLine();
 			rareza = lec.next();
 			expansion = lec.next();
 			cantidad = lec.nextInt();
@@ -37,7 +37,7 @@ public class EjecutableListadoCartas {
 		System.out.println("\nVendiste:");
 		System.out.println(cant + " " + l.venderCarta(auxN, cant));
 		System.out.println(l.getCartas());
-		nombre = lec.next();
+		nombre = lec.nextLine();
 		rareza = lec.next();
 		expansion = lec.next();
 		cantidad = lec.nextInt();

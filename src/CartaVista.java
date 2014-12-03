@@ -5,16 +5,16 @@ import java.awt.GridLayout;
 
 public class CartaVista extends JFrame {
 	protected JTextArea carta,img;
-	protected JLabel pirata=new JLabel(""),pirata2=new JLabel(""),pirata3=new JLabel("");
-	protected JButton v = new JButton("Vender");
-	protected JButton r = new JButton("Regresar");
+	protected JLabel pirata=new JLabel(""),pirata2=new JLabel("");
+	protected JButton vender = new JButton("Vender");
+	protected JButton regresar = new JButton("Regresar");
 	
 	public CartaVista(){
 		super("Carta");
 		
 		//creacion de componentes
-		r.setBackground(java.awt.Color.red);
-		v.setBackground(java.awt.Color.yellow);
+		regresar.setBackground(java.awt.Color.red);
+		vender.setBackground(java.awt.Color.yellow);
 		carta= new JTextArea(500,500);
 		carta.setText("\nn\nn\nn");
 		img= new JTextArea(5000,5000);
@@ -31,8 +31,8 @@ public class CartaVista extends JFrame {
 		p.add(pirata);		
 		p.add(pirata2);
 		p.add(carta);
-		p.add(v);
-		p.add(r);
+		p.add(vender);
+		p.add(regresar);
 		
 		this.add(p);
 		
