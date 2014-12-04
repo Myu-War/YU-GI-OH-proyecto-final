@@ -31,7 +31,7 @@ public class BusquedaVista extends JFrame {
 		JButton carta;
 		for (int i = 0; i<MAXCARTAS; i++)
 		{
-			carta = new JButton("--");
+			carta = new JButton("---");
 			btnsCartas[i] = carta;
 		}
 	     regresar.setBackground(java.awt.Color.cyan);

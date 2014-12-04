@@ -4,21 +4,20 @@ import javax.swing.border.Border;
 import java.awt.GridLayout;
 
 public class CartaVista extends JFrame {
-	protected JTextArea carta,img;
-	protected JLabel pirata=new JLabel(""),pirata2=new JLabel("");
+	protected JTextArea carta;
+	protected JLabel pirata=new JLabel(""),pirata2=new JLabel(""),img;
 	protected JButton vender = new JButton("Vender");
 	protected JButton regresar = new JButton("Regresar");
 	
-	public CartaVista(){
-		super("Carta");
+	public CartaVista(String titulo){
+		super(titulo);
 		
 		//creacion de componentes
 		regresar.setBackground(java.awt.Color.cyan);
 		vender.setBackground(java.awt.Color.yellow);
 		carta= new JTextArea(500,500);
 		carta.setText("\nn\nn\nn");
-		img= new JTextArea(5000,5000);
-		img.setText("\nimg\nimg\nimg");
+		img= new JLabel("");
 		
 		//adiciona al contenedor: JPanel
 		JPanel p=new JPanel();
@@ -37,13 +36,13 @@ public class CartaVista extends JFrame {
 		this.add(p);
 		
 		//visualizacion
-		setBounds(500,300,250,250);
+		setBounds(500,100,350,600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
 	
 	public static void main(String [] args){
-	 CartaVista yo=new CartaVista();
+	 CartaVista yo=new CartaVista("titulo");
 	}
 	
 }

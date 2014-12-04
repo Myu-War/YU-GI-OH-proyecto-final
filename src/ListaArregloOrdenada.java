@@ -125,11 +125,11 @@ public class ListaArregloOrdenada<T extends Comparable<T>> {
 		StringBuilder cad = new StringBuilder();
 
 		cad.append("\nTamaño de la lista: " + n + "\n" + "\n");
-		cad.append("[  ");
+		cad.append("[\n");
 		for (int i = 0; i < n; i++) {
-			cad.append(datos[i].toString() + "  ");
+			cad.append(datos[i].toString());
 		}
-		cad.append("\n]");
+		cad.append("]");
 		return cad.toString();
 	}
 }

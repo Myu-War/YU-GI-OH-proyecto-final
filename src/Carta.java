@@ -91,7 +91,7 @@ public class Carta implements Comparable <Carta>{
 	public String toString(){
 		StringBuilder cad=new StringBuilder();
 		
-		cad.append("\nNombre de la Carta: "+nombre);
+		cad.append("Nombre de la Carta: "+nombre);
 		cad.append("\nRareza: "+rareza);
 		cad.append("\nExpansión: "+expansion);
 		cad.append("\nCantidad: "+cantidad);
@@ -101,7 +101,7 @@ public class Carta implements Comparable <Carta>{
 		else{
 			cad.append("\nUnlimited\n");
 		}
-		cad.append("ID: "+id);
+		cad.append("ID: "+id+"\n");
 		
 		return cad.toString();
 	}

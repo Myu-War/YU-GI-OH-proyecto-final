@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class InicioControlador extends InicioVista {
-	public static ListadoCartas listadoCartas,listadoBusqueda;
+	public static ListadoCartas listadoCartas;
 	
 	public InicioControlador(){
 		super();
@@ -25,6 +25,8 @@ public class InicioControlador extends InicioVista {
 			if (ae.getActionCommand().equals("Buscar")) {
 				listadoCartas= new ListadoCartas(listadoCartas.busqueda(nombreTxt.getText()));
 				BusquedaControlador yo = new BusquedaControlador(listadoCartas);
+				dispose();
+				System.out.print(listadoCartas.getCartas().toString());
 			}
 			if (ae.getActionCommand().equals("Añadir Carta(s)")) {
 				AñadirCartaControlador yo = new AñadirCartaControlador();
@@ -66,7 +68,7 @@ public class InicioControlador extends InicioVista {
 				listadoCartas.addCarta(nombre, rareza, expansion, stEdi, cantidad);
 			}
 		}
-		System.out.print(listadoCartas.toString());
+		//System.out.print(listadoCartas.toString());
 		lec.close();
 	}
 	

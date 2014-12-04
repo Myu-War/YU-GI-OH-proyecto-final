@@ -8,6 +8,8 @@ public class BusquedaControlador extends BusquedaVista {
 	//private int indiceCarta = 0;
 	protected String datosPrueba[] = {"Summon skull", "Giant Rat", "Hane-hane", "Dark hole", "Soul charge","Kuribo","Dark Bribe"};
 	protected int indiceCarta = 0;
+	//public static String indicaExp;
+	private int ind1=0,ind2=1,ind3=2;
 
 	public BusquedaControlador(){
 		super();
@@ -39,20 +41,25 @@ public class BusquedaControlador extends BusquedaVista {
 		
 	private class EscuchadorB1 implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			//btnsCartas[0].getName();
-			System.out.print(btnsCartas[0].getText());
+			if(btnsCartas[0].getText() != "---"){
+				CartaControlador self=new CartaControlador(btnsCartas[0].getText(),ind1);
+			}
 		}
 	}
 	
 	private class EscuchadorB2 implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			System.out.print(btnsCartas[1].getText());
+			if(btnsCartas[1].getText() != "---"){
+				CartaControlador self=new CartaControlador(btnsCartas[1].getText(),ind2);
+			}		
 		}
 	}
 	
 	private class EscuchadorB3 implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			System.out.print(btnsCartas[2].getText());
+			if(btnsCartas[2].getText() != "---"){
+				CartaControlador self=new CartaControlador(btnsCartas[2].getText(),ind3);
+			}	
 		}
 	}
 	
@@ -61,6 +68,7 @@ public class BusquedaControlador extends BusquedaVista {
 			
 			if (ae.getActionCommand().equals("Regresar")) {
 				dispose();
+				InicioControlador self=new InicioControlador();
 			}
 			if(ae.getActionCommand().equals("▲")){
 				int k=0,j=indiceCarta-(MAXCARTAS-1);
@@ -69,6 +77,9 @@ public class BusquedaControlador extends BusquedaVista {
 					
 				}
 				else{
+					ind1=ind1+1;
+					ind2=ind2+1;
+					ind3=ind3+1;
 					while (k < MAXCARTAS && indiceCarta < InicioControlador.listadoCartas.getNumCartas()){
 						btnsCartas[k].setText(InicioControlador.listadoCartas.getNombreCarta(j));
 						j++;
@@ -88,6 +99,9 @@ public class BusquedaControlador extends BusquedaVista {
 				else{
 					//System.out.println("j: "+j);
 					//System.out.println("indice: "+indiceCarta);
+					ind1=ind1-1;
+					ind2=ind2-1;
+					ind3=ind3-1;
 					while (k < MAXCARTAS && indiceCarta-(MAXCARTAS+1) >= 0){
 						btnsCartas[k].setText(InicioControlador.listadoCartas.getNombreCarta(j));
 						j++;
