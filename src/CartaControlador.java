@@ -16,7 +16,7 @@ public class CartaControlador extends CartaVista {
 		public void actionPerformed(ActionEvent ae) {
 
 			if (ae.getActionCommand().equals("Vender")) {
-				VenderCartaVista yo = new VenderCartaVista();
+				VenderCartaControlador yo = new VenderCartaControlador();
 			}
 			if (ae.getActionCommand().equals("Regresar")) {
 				dispose();

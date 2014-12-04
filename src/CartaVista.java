@@ -13,7 +13,7 @@ public class CartaVista extends JFrame {
 		super("Carta");
 		
 		//creacion de componentes
-		regresar.setBackground(java.awt.Color.red);
+		regresar.setBackground(java.awt.Color.cyan);
 		vender.setBackground(java.awt.Color.yellow);
 		carta= new JTextArea(500,500);
 		carta.setText("\nn\nn\nn");

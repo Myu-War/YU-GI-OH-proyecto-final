@@ -16,75 +16,55 @@ import javax.swing.plaf.basic.BasicComboBoxRenderer;
 
 
 public class BusquedaVista extends JFrame {
-	protected JButton r=new JButton("Regresar"), auxJB= new JButton("holo");
-	protected JLabel t=new JLabel("");
-	protected JComboBox c=new JComboBox(new Object[] {auxJB, auxJB});
-	protected ListadoCartas l= new ListadoCartas();
-	protected int n;
-	protected String a="S";
+	protected JButton regresar=new JButton("Regresar");
+	protected JButton btnArriba = new JButton("▲");
+	protected JButton btnAbajo = new JButton("▼");
+	protected JLabel fantasma = new JLabel("");
+	protected final int MAXCARTAS = 3;
+	protected JPanel p = new JPanel();
+	protected JButton[] btnsCartas = new JButton[MAXCARTAS];
+	protected String datosPrueba[] = {"Summon skull", "Giant Rat", "Hane-hane", "Dark hole", "Soul charge"};
 	
 	public BusquedaVista() {
 		super("Busqueda");
 
 		// creacion de componentes
-		for (int i=0; i<5; i++){
-			auxJB= new JButton(a);
-			c.add(auxJB);
+		JButton carta;
+		for (int i = 0; i<MAXCARTAS; i++)
+		{
+			carta = new JButton("--");
+			btnsCartas[i] = carta;
 		}
-		getContentPane().add(c);
-	      c.setRenderer(new ButtonComboBoxRenderer());
-	     r.setBackground(java.awt.Color.red);
+	     regresar.setBackground(java.awt.Color.cyan);
 
 		// adiciona al contenedor: JPanel
-		JPanel p = new JPanel();
-		p.setLayout(new GridLayout(1,1));
+		p.setLayout(new GridLayout(7,1));
 		Border gap = BorderFactory.createEmptyBorder(10, 10, 10, 10);
 		p.setBorder(gap);
 
-		p.add(c);
-		p.add(t);
-		p.add(r);
+		int indiceCarta = 0;
+		while (indiceCarta < MAXCARTAS && indiceCarta < datosPrueba.length){
+			btnsCartas[indiceCarta].setText(datosPrueba[indiceCarta]);
+			indiceCarta++;
+		}
+		
+		p.add(btnArriba);
+		for (int i = 0; i<MAXCARTAS; i++)
+		{
+			p.add(btnsCartas[i]);
+		}
+		p.add(btnAbajo);
+		p.add(fantasma);
+		p.add(regresar);
 		this.add(p);
 
 		// visualizacion
-		setBounds(300, 300, 350, 100);
+		setBounds(300, 300, 350, 300);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
 
 	public static void main(String[] args) {
 		BusquedaVista yo = new BusquedaVista();
-	}
-	
-	class ButtonComboBoxRenderer extends BasicComboBoxRenderer implements ListCellRenderer
-	{
-	   public ButtonComboBoxRenderer() {
-	      super();
-	   }
-	    
-	   public Component getListCellRendererComponent( JList list,
-	           Object value, int index, boolean isSelected, boolean cellHasFocus) {
-	      if (isSelected) {
-	          setBackground(list.getSelectionBackground());
-	          setForeground(list.getSelectionForeground());
-	      }
-	      else {
-	          setBackground(list.getBackground());
-	          setForeground(list.getForeground());
-	      }
-	  
-	      setFont(list.getFont());
-	      if (value instanceof Icon) {
-	         setIcon((Icon)value);
-	      }
-	      if (value instanceof JButton) {
-	         return (Component) value;
-	      }
-	      else {
-	         setText((value == null) ? "" : value.toString());
-	      }
-	  
-	      return this;
-	  } 
 	}
 }

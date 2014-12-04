@@ -15,7 +15,7 @@ public class VenderCartaVista extends JFrame {
 		//creacion de componentes
 		cantidadLb=new JLabel("Cantidad:");
 		cantidadTxt=new JTextField(3);
-		regresar.setBackground(java.awt.Color.red);
+		regresar.setBackground(java.awt.Color.cyan);
 		vender.setBackground(java.awt.Color.yellow);
 		
 		//adiciona al contenedor: JPanel

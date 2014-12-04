@@ -18,6 +18,7 @@ public class VenderCartaControlador extends VenderCartaVista {
 
 			if (ae.getActionCommand().equals("Vender")) {
 				mensajeEmergente.showMessageDialog(vender,"Carta Vendida");
+				dispose();
 			}
 			if (ae.getActionCommand().equals("Regresar")) {
 				dispose();

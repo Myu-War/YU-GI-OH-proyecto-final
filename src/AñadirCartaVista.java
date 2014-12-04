@@ -23,7 +23,7 @@ public class AñadirCartaVista extends JFrame {
 		stTxt = new JTextField(5);
 		canLb = new JLabel("Cantidad:");
 		canTxt = new JTextField(3);
-		regresar.setBackground(java.awt.Color.red);
+		regresar.setBackground(java.awt.Color.cyan);
 		añadir.setBackground(java.awt.Color.green);
 
 		// adiciona al contenedor: JPanel
