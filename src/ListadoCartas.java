@@ -14,19 +14,23 @@ public class ListadoCartas {
 		this();
 		this.titulo = titulo;
 	}
+	
+	public ListadoCartas(ListaArregloOrdenada<Carta> l) {
+		this();
+		this.cartas = l;
+	}
 
 	public int getNumCartas() {
 		return cartas.size();
 	}
 
-	public String getCartas() {
-		return cartas.toString();
+	public ListaArregloOrdenada getCartas() {
+		return this.cartas;
 	}
 
 	public boolean addCarta(String nombre, String rareza, String expansion,
 			boolean stEdi, int cantidad) {
 		Carta x;
-		int i = 0;
 		boolean ans;
 
 		x = new Carta(nombre, rareza, expansion, stEdi, cantidad);
@@ -35,9 +39,10 @@ public class ListadoCartas {
 		return ans;
 	}
 
-	public String venderCarta(int i, int cantidad) {
+	public String venderCarta(int j, int cantidad) {
 		String res = "Carta no encontrada.";
 		Carta x = null;
+		int i=j-1;
 
 		if (cartas.get(i).getCantidad() - cantidad <= 0) {
 			x = cartas.remove(i);

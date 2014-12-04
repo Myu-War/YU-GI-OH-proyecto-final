@@ -26,7 +26,7 @@ public class EjecutableListadoCartas {
 		linea = "";
 		while(lec.hasNextLine()) {
 			linea = lec.nextLine();
-			System.out.println(linea);
+			//System.out.println(linea);
 			//ver http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
 			datosCarta = linea.split("\\+");
 			if (datosCarta.length == 5)
@@ -40,6 +40,9 @@ public class EjecutableListadoCartas {
 			}
 		}
 		System.out.print(l.toString());
+		System.out.print("\n\nVendiste: "+l.venderCarta(1, 3));
+		System.out.print(l.toString());
+		System.out.print(l.busqueda("summon skull"));
 		lec.close();
 	}
 }

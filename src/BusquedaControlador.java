@@ -11,9 +11,7 @@ public class BusquedaControlador extends BusquedaVista {
 
 	public BusquedaControlador(){
 		super();
-		regresar.addActionListener(new Escuchador());
-		btnArriba.addActionListener(new Escuchador());
-		btnAbajo.addActionListener(new Escuchador());
+		construye();
 		while (indiceCarta < MAXCARTAS && indiceCarta < datosPrueba.length){
 			btnsCartas[indiceCarta].setText(datosPrueba[indiceCarta]);
 			indiceCarta++;
@@ -23,13 +21,17 @@ public class BusquedaControlador extends BusquedaVista {
 	
 	public BusquedaControlador(ListadoCartas listadoCartas){
 		super();
-		regresar.addActionListener(new Escuchador());
-		btnArriba.addActionListener(new Escuchador());
-		btnAbajo.addActionListener(new Escuchador());
+		construye();
 		while (indiceCarta < MAXCARTAS && indiceCarta < listadoCartas.getNumCartas()){
 			btnsCartas[indiceCarta].setText(listadoCartas.getNombreCarta(indiceCarta));
 			indiceCarta++;
 		}
+	}
+	
+	private void construye(){
+		regresar.addActionListener(new Escuchador());
+		btnArriba.addActionListener(new Escuchador());
+		btnAbajo.addActionListener(new Escuchador());
 	}
 		
 	private class Escuchador implements ActionListener {
@@ -45,8 +47,8 @@ public class BusquedaControlador extends BusquedaVista {
 					
 				}
 				else{
-					while (k < MAXCARTAS && indiceCarta < datosPrueba.length){
-						btnsCartas[k].setText(datosPrueba[j]);
+					while (k < MAXCARTAS && indiceCarta < InicioControlador.listadoCartas.getNumCartas()){
+						btnsCartas[k].setText(InicioControlador.listadoCartas.getNombreCarta(j));
 						j++;
 						k++;
 					}
@@ -65,7 +67,7 @@ public class BusquedaControlador extends BusquedaVista {
 					//System.out.println("j: "+j);
 					//System.out.println("indice: "+indiceCarta);
 					while (k < MAXCARTAS && indiceCarta-(MAXCARTAS+1) >= 0){
-						btnsCartas[k].setText(datosPrueba[j]);
+						btnsCartas[k].setText(InicioControlador.listadoCartas.getNombreCarta(j));
 						j++;
 						k++;
 					}

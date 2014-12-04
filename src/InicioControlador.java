@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class InicioControlador extends InicioVista {
-	private static ListadoCartas listadoCartas;
+	public static ListadoCartas listadoCartas,listadoBusqueda;
 	
 	public InicioControlador(){
 		super();
@@ -23,6 +23,7 @@ public class InicioControlador extends InicioVista {
 
 			carta = nombreTxt.getText();
 			if (ae.getActionCommand().equals("Buscar")) {
+				listadoCartas= new ListadoCartas(listadoCartas.busqueda(nombreTxt.getText()));
 				BusquedaControlador yo = new BusquedaControlador(listadoCartas);
 			}
 			if (ae.getActionCommand().equals("Añadir Carta(s)")) {
@@ -52,7 +53,7 @@ public class InicioControlador extends InicioVista {
 		linea = "";
 		while(lec.hasNextLine()) {
 			linea = lec.nextLine();
-			System.out.println(linea);
+		//	System.out.println(linea);
 			//ver http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
 			datosCarta = linea.split("\\+");
 			if (datosCarta.length == 5)

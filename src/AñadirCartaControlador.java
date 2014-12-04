@@ -39,8 +39,11 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 					rareza= rarTxt.getText();
 					expansion = expTxt.getText();
 					edition = Boolean.parseBoolean(stTxt.getText()); 
+					if(edition || stTxt.getText().equals("si") ||  stTxt.getText().equals("SI")){
+						edition = true;
+					}
 					cantidad = Integer.parseInt(canTxt.getText());
-					guardaDatos();
+					guardaDatos(nombre, rareza, expansion, edition ,cantidad);
 					System.out.println("CARTA AÑADIDA");
 					System.out.println("Nombre: "+nombre);
 					System.out.println("Rareza: "+rareza);
@@ -56,17 +59,13 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 		}
 	}
 	
-	private void guardaDatos(){
+	private void guardaDatos(String nombre, String rareza, String expansion, boolean st, int cantidad){
 		
 		try{
 			File ent = new File("cartas.txt");
-			FileWriter w = new FileWriter(ent);
-			BufferedWriter bw = new BufferedWriter(w);
-			PrintWriter wr = new PrintWriter(bw);  
-			wr.write("Esta es una linea de codigo");//escribimos en el archivo
-			wr.append(" - y aqui continua"); //concatenamos en el archivo sin borrar lo existente
-			wr.close();
-			bw.close();
+			FileWriter TextOut = new FileWriter(ent, true);
+			TextOut.write("\n"+nombre+"+"+rareza+"+"+expansion+"+"+cantidad+"+"+st);
+			TextOut.close();
 			}catch(IOException e){};
 	}
 	
