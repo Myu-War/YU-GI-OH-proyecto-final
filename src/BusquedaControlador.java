@@ -20,20 +20,7 @@ public class BusquedaControlador extends BusquedaVista {
 				dispose();
 			}
 			if(ae.getActionCommand().equals("▲")){
-				int indiceCarta=3, k=0;
-				while(k < MAXCARTAS && indiceCarta < datosPrueba.length){
-					btnsCartas[k].setText(datosPrueba[indiceCarta]);
-					indiceCarta++;
-					k++;
-				}
-				p.add(btnArriba);
-				for (int i = 0; i<MAXCARTAS; i++)
-				{
-					p.add(btnsCartas[i]);
-				}
-				p.add(btnAbajo);
-				p.add(fantasma);
-				p.add(regresar);
+				
 			}
 			
 		}
