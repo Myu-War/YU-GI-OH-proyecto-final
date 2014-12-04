@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 
 public class BusquedaControlador extends BusquedaVista {
-	private int indiceCarta = 0;
+	//private int indiceCarta = 0;
 	
 	public BusquedaControlador(){
 		super();
@@ -21,9 +21,9 @@ public class BusquedaControlador extends BusquedaVista {
 				dispose();
 			}
 			if(ae.getActionCommand().equals("▲")){
-				int k=0,j=indiceCarta+1;
+				int k=0,j=indiceCarta-(MAXCARTAS-1);
 				
-				if(indiceCarta >= datosPrueba.length-3){
+				if(indiceCarta >= datosPrueba.length){
 					
 				}
 				else{
@@ -34,9 +34,25 @@ public class BusquedaControlador extends BusquedaVista {
 					}
 					indiceCarta++;
 				}
+				//System.out.println("j: "+j);
+				//System.out.println("indice: "+indiceCarta);
 			}
 			if(ae.getActionCommand().equals("▼")){
+				int k=0,j=indiceCarta-(MAXCARTAS+1);
 				
+				if(j < 0){
+					
+				}
+				else{
+					//System.out.println("j: "+j);
+					//System.out.println("indice: "+indiceCarta);
+					while (k < MAXCARTAS && indiceCarta-(MAXCARTAS+1) >= 0){
+						btnsCartas[k].setText(datosPrueba[j]);
+						j++;
+						k++;
+					}
+					indiceCarta--;
+				}
 			}
 		}
 	}
