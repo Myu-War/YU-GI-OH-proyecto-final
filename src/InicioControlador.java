@@ -8,8 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class InicioControlador extends InicioVista {
-	
-	private ListadoCartas listadoCartas;
+	private static ListadoCartas listadoCartas;
 	
 	public InicioControlador(){
 		super();
@@ -31,7 +30,6 @@ public class InicioControlador extends InicioVista {
 			}
 		}
 	}
-	
 	
 	private void cargaDatos()
 	{

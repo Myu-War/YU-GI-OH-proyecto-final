@@ -1,5 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,6 +21,7 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 	
 	private class EscuchadorB implements ActionListener {
 		protected JOptionPane mensajeEmergente= new JOptionPane();
+		
 		public void actionPerformed(ActionEvent ae) {
 			String nombre, rareza, expansion;
 			boolean edition;
@@ -34,6 +40,7 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 					expansion = expTxt.getText();
 					edition = Boolean.parseBoolean(stTxt.getText()); 
 					cantidad = Integer.parseInt(canTxt.getText());
+					guardaDatos();
 					System.out.println("CARTA AÑADIDA");
 					System.out.println("Nombre: "+nombre);
 					System.out.println("Rareza: "+rareza);
@@ -47,6 +54,20 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 				}
 			}
 		}
+	}
+	
+	private void guardaDatos(){
+		
+		try{
+			File ent = new File("cartas.txt");
+			FileWriter w = new FileWriter(ent);
+			BufferedWriter bw = new BufferedWriter(w);
+			PrintWriter wr = new PrintWriter(bw);  
+			wr.write("Esta es una linea de codigo");//escribimos en el archivo
+			wr.append(" - y aqui continua"); //concatenamos en el archivo sin borrar lo existente
+			wr.close();
+			bw.close();
+			}catch(IOException e){};
 	}
 	
 	public static void main(String [] args){
