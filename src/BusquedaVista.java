@@ -23,7 +23,6 @@ public class BusquedaVista extends JFrame {
 	protected final int MAXCARTAS = 3;
 	protected JPanel p = new JPanel();
 	protected JButton[] btnsCartas = new JButton[MAXCARTAS];
-
 	
 	public BusquedaVista() {
 		super("Busqueda");
@@ -36,7 +35,12 @@ public class BusquedaVista extends JFrame {
 			btnsCartas[i] = carta;
 		}
 	     regresar.setBackground(java.awt.Color.cyan);
-
+	     btnArriba.setBackground(java.awt.Color.lightGray);
+	     btnAbajo.setBackground(java.awt.Color.lightGray);
+	     for(int i=0; i<3; i++){
+	    	 btnsCartas[i].setBackground(java.awt.Color.white);
+	     }
+	     
 		// adiciona al contenedor: JPanel
 		p.setLayout(new GridLayout(7,1));
 		Border gap = BorderFactory.createEmptyBorder(10, 10, 10, 10);

@@ -32,7 +32,7 @@ public class InicioControlador extends InicioVista {
 		}
 	}
 	
-	private void cargaDatos()
+	public static void cargaDatos()
 	{
 
 		String linea, nombre, rareza, expansion, auxS;

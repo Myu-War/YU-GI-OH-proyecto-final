@@ -1,6 +1,7 @@
-dark hole+comun+jdsd23+2+false
-summon skull+secreta+NECH3+5+true
-giant rat+comun+jk52+5+false
-giant rat+comun+jk52+5+false
+Dark Hole+Comun+jdsd23+2+false
+Summon Skull+Secreta+NECH3+5+true
+Giant Rat+comun+jk52+5+false
+Giant Rat+comun+jk52+5+false
 Junk Synchron+Secret Rare+LC5D-EN002 +2+true
-summon skull+super+DB1-EN142+2+true
+Summon Skull+super+DB1-EN142+2+true
+U.A. Midfielder+Rare+NECH-EN087+3+true

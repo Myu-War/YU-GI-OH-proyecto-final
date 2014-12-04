@@ -32,8 +32,30 @@ public class BusquedaControlador extends BusquedaVista {
 		regresar.addActionListener(new Escuchador());
 		btnArriba.addActionListener(new Escuchador());
 		btnAbajo.addActionListener(new Escuchador());
+	    btnsCartas[0].addActionListener(new EscuchadorB1());
+	    btnsCartas[1].addActionListener(new EscuchadorB2());
+	    btnsCartas[2].addActionListener(new EscuchadorB3());
 	}
 		
+	private class EscuchadorB1 implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			//btnsCartas[0].getName();
+			System.out.print(btnsCartas[0].getText());
+		}
+	}
+	
+	private class EscuchadorB2 implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			System.out.print(btnsCartas[1].getText());
+		}
+	}
+	
+	private class EscuchadorB3 implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			System.out.print(btnsCartas[2].getText());
+		}
+	}
+	
 	private class Escuchador implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 			

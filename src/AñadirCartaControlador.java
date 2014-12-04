@@ -54,6 +54,7 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 					
 					dispose();
 					AñadirCartaControlador yo = new AñadirCartaControlador();
+					InicioControlador.cargaDatos();
 				}
 			}
 		}
