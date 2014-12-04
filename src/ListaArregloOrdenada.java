@@ -129,7 +129,7 @@ public class ListaArregloOrdenada<T extends Comparable<T>> {
 		for (int i = 0; i < n; i++) {
 			cad.append(datos[i].toString() + "  ");
 		}
-		cad.append("]");
+		cad.append("\n]");
 		return cad.toString();
 	}
 }

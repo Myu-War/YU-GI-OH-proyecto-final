@@ -27,16 +27,9 @@ public class ListadoCartas {
 			boolean stEdi, int cantidad) {
 		Carta x;
 		int i = 0;
-		boolean ans = false;
+		boolean ans;
 
 		x = new Carta(nombre, rareza, expansion, stEdi, cantidad);
-		while (i < cartas.size() && !cartas.get(i).getExpansion().equals(expansion)) {
-			i++;
-		}
-		if (i<cartas.size() && cartas.get(i).getStEdi() == stEdi && cartas.get(i).getRareza().equals(rareza)) {
-			cartas.get(i).setCantidad(cartas.get(i).getCantidad() + cantidad);
-			x.setID(cartas.get(i).getID());
-		}
 		ans = cartas.add(x);
 		
 		return ans;

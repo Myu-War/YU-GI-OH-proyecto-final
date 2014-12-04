@@ -44,13 +44,19 @@ public class Playground {
 		while(lec.hasNextLine()) {
 			linea = lec.nextLine();
 			System.out.println(linea);
+			//ver http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
+			datosCarta = linea.split("\\+");
+			if (datosCarta.length == 5)
+			{
+				nombre = datosCarta[0];
+				rareza = datosCarta[1];
+				expansion = datosCarta[2];
+				cantidad = Integer.parseInt(datosCarta[3]);
+				stEdi = datosCarta[4] == "true";
+				l.addCarta(nombre, rareza, expansion, stEdi, cantidad);
+			}
 		}
-		datosCarta = linea.split("*-*");
-		//nombre = lec.nextLine();
-		//rareza = lec.next();
-		//expansion = lec.next();
-		//cantidad = lec.nextInt();
-		//stEdi = lec.nextBoolean();
+		System.out.print(l.toString());
 		lec.close();
 	}
 	

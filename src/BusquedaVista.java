@@ -23,7 +23,8 @@ public class BusquedaVista extends JFrame {
 	protected final int MAXCARTAS = 3;
 	protected JPanel p = new JPanel();
 	protected JButton[] btnsCartas = new JButton[MAXCARTAS];
-	protected String datosPrueba[] = {"Summon skull", "Giant Rat", "Hane-hane", "Dark hole", "Soul charge"};
+	protected String datosPrueba[] = {"Summon skull", "Giant Rat", "Hane-hane", "Dark hole", "Soul charge","Kuribo","Dark Bribe"};
+	protected int indiceCarta = 0;
 	
 	public BusquedaVista() {
 		super("Busqueda");
@@ -41,8 +42,7 @@ public class BusquedaVista extends JFrame {
 		p.setLayout(new GridLayout(7,1));
 		Border gap = BorderFactory.createEmptyBorder(10, 10, 10, 10);
 		p.setBorder(gap);
-
-		int indiceCarta = 0;
+		
 		while (indiceCarta < MAXCARTAS && indiceCarta < datosPrueba.length){
 			btnsCartas[indiceCarta].setText(datosPrueba[indiceCarta]);
 			indiceCarta++;
