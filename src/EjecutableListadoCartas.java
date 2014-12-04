@@ -8,12 +8,13 @@ import java.util.Scanner;
 public class EjecutableListadoCartas {
 	public static void main(String[] args) {
 		ListadoCartas l;
-		String nombre, rareza, expansion, auxS;
-		int auxN, cantidad, cant;
+		String linea, nombre, rareza, expansion, auxS;
+		int cantidad, cant;
 		boolean stEdi;
 		Scanner lec = null;
 		File ent = new File("cartas.txt");
 		l = new ListadoCartas("Busqueda");
+		String datosCarta[];
 
 		try {
 			lec = new Scanner(ent);
@@ -21,30 +22,24 @@ public class EjecutableListadoCartas {
 			System.err.println("ERROR" + fnfe);
 			System.exit(-1);
 		}
-		auxN = lec.nextInt();
-		System.out.println(auxN);
-		for (int i = 1; i <= auxN; i++) {
-			nombre = lec.nextLine();
-			rareza = lec.next();
-			expansion = lec.next();
-			cantidad = lec.nextInt();
-			stEdi = lec.nextBoolean();
-			l.addCarta(nombre, rareza, expansion, stEdi, cantidad);
+		
+		linea = "";
+		while(lec.hasNextLine()) {
+			linea = lec.nextLine();
+			System.out.println(linea);
+			//ver http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
+			datosCarta = linea.split("\\+");
+			if (datosCarta.length == 5)
+			{
+				nombre = datosCarta[0];
+				rareza = datosCarta[1];
+				expansion = datosCarta[2];
+				cantidad = Integer.parseInt(datosCarta[3]);
+				stEdi = datosCarta[4].equals("true");
+				l.addCarta(nombre, rareza, expansion, stEdi, cantidad);
+			}
 		}
-		System.out.println(l.getCartas());
-		auxN = lec.nextInt();
-		cant = lec.nextInt();
-		System.out.println("\nVendiste:");
-		System.out.println(cant + " " + l.venderCarta(auxN, cant));
-		System.out.println(l.getCartas());
-		nombre = lec.nextLine();
-		rareza = lec.next();
-		expansion = lec.next();
-		cantidad = lec.nextInt();
-		stEdi = lec.nextBoolean();
-		l.addCarta(nombre, rareza, expansion, stEdi, cantidad);
-		System.out.println(l.getCartas());
-		System.out.println(l.busqueda("giant-rat"));
+		System.out.print(l.toString());
 		lec.close();
 	}
 }

@@ -6,12 +6,30 @@ import java.awt.event.ActionListener;
 
 public class BusquedaControlador extends BusquedaVista {
 	//private int indiceCarta = 0;
-	
+	protected String datosPrueba[] = {"Summon skull", "Giant Rat", "Hane-hane", "Dark hole", "Soul charge","Kuribo","Dark Bribe"};
+	protected int indiceCarta = 0;
+
 	public BusquedaControlador(){
 		super();
 		regresar.addActionListener(new Escuchador());
 		btnArriba.addActionListener(new Escuchador());
 		btnAbajo.addActionListener(new Escuchador());
+		while (indiceCarta < MAXCARTAS && indiceCarta < datosPrueba.length){
+			btnsCartas[indiceCarta].setText(datosPrueba[indiceCarta]);
+			indiceCarta++;
+		}
+	}
+
+	
+	public BusquedaControlador(ListadoCartas listadoCartas){
+		super();
+		regresar.addActionListener(new Escuchador());
+		btnArriba.addActionListener(new Escuchador());
+		btnAbajo.addActionListener(new Escuchador());
+		while (indiceCarta < MAXCARTAS && indiceCarta < listadoCartas.getNumCartas()){
+			btnsCartas[indiceCarta].setText(listadoCartas.getNombreCarta(indiceCarta));
+			indiceCarta++;
+		}
 	}
 		
 	private class Escuchador implements ActionListener {

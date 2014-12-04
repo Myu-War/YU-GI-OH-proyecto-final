@@ -68,6 +68,12 @@ public class ListadoCartas {
 		
 		return res;
 	}
+	
+	public String getNombreCarta(int indice){
+		
+		return this.cartas.get(indice).getNombre();
+		
+	}
 
 	public int compareTo(ListadoCartas otro) {
 		return this.titulo.compareTo(otro.titulo);
