@@ -17,7 +17,7 @@ public class InicioVista extends JFrame {
 		nombreTxt = new JTextField(50);
 		buscar.setBackground(java.awt.Color.yellow);
 		añadirC.setBackground(java.awt.Color.green);
-		
+
 		// adiciona al contenedor: JPanel
 		JPanel p = new JPanel();
 		p.setLayout(new GridLayout(2, 4));

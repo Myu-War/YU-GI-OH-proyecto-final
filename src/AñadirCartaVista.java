@@ -8,7 +8,7 @@ public class AñadirCartaVista extends JFrame {
 	protected JTextField nomTxt, rarTxt, expTxt, stTxt, canTxt;
 	protected JButton añadir = new JButton("Añadir");
 	protected JButton regresar = new JButton("Regresar");
-	
+
 	public AñadirCartaVista() {
 		super("Añadir Carta");
 

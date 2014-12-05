@@ -2,27 +2,28 @@
  * 27/11/2014
  */
 
-public class Carta implements Comparable <Carta>{
+public class Carta implements Comparable<Carta> {
 	private String nombre;
 	private String rareza;
 	private String expansion;
 	private boolean stEdi;
 	private int cantidad;
-	private static int generaid=1;
+	private static int generaid = 1;
 	private int id;
 
-	public Carta(){
-		id=generaid;
+	public Carta() {
+		id = generaid;
 		generaid++;
 	}
-	
-	public Carta(String nombre, String rareza, String expansion, boolean stEdi, int cantidad){
+
+	public Carta(String nombre, String rareza, String expansion, boolean stEdi,
+			int cantidad) {
 		this();
-		this.nombre=nombre;
-		this.rareza=rareza;
-		this.expansion=expansion;
-		this.stEdi=stEdi;
-		this.cantidad=cantidad;
+		this.nombre = nombre;
+		this.rareza = rareza;
+		this.expansion = expansion;
+		this.stEdi = stEdi;
+		this.cantidad = cantidad;
 	}
 
 	public String getNombre() {
@@ -56,53 +57,51 @@ public class Carta implements Comparable <Carta>{
 	public void setStEdi(boolean stEdi) {
 		this.stEdi = stEdi;
 	}
-	
+
 	public int getCantidad() {
 		return cantidad;
 	}
-	
-	public void setCantidad(int cantidad){
-		this.cantidad=cantidad;
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
-	
-	public int getID(){
+
+	public int getID() {
 		return id;
 	}
-	
-	public void setID(int id){
+
+	public void setID(int id) {
 		this.id = id;
 	}
-	
-	public int compareTo(Carta otro){
-		int res=-1;
-		
-		if(this.id>otro.id){
-			res=1;
-		}
-		else{
-			if(this.id==otro.id){
-				res=0;
+
+	public int compareTo(Carta otro) {
+		int res = -1;
+
+		if (this.id > otro.id) {
+			res = 1;
+		} else {
+			if (this.id == otro.id) {
+				res = 0;
 			}
 		}
-		
+
 		return res;
 	}
-	
-	public String toString(){
-		StringBuilder cad=new StringBuilder();
-		
-		cad.append("Nombre de la Carta: "+nombre);
-		cad.append("\nRareza: "+rareza);
-		cad.append("\nExpansión: "+expansion);
-		cad.append("\nCantidad: "+cantidad);
-		if(stEdi){
+
+	public String toString() {
+		StringBuilder cad = new StringBuilder();
+
+		cad.append("Nombre de la Carta: " + nombre);
+		cad.append("\nRareza: " + rareza);
+		cad.append("\nExpansión: " + expansion);
+		cad.append("\nCantidad: " + cantidad);
+		if (stEdi) {
 			cad.append("\n1st Edition\n");
-		}
-		else{
+		} else {
 			cad.append("\nUnlimited\n");
 		}
-		cad.append("ID: "+id+"\n");
-		
+		cad.append("ID: " + id + "\n");
+
 		return cad.toString();
 	}
 
@@ -128,5 +127,4 @@ public class Carta implements Comparable <Carta>{
 		return true;
 	}
 
-	
 }

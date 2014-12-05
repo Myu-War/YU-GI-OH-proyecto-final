@@ -9,22 +9,23 @@ import java.util.Scanner;
 
 public class InicioControlador extends InicioVista {
 	public static ListadoCartas listadoCartas;
-	
-	public InicioControlador(){
+
+	public InicioControlador() {
 		super();
 		buscar.addActionListener(new EscuchadorRes());
 		añadirC.addActionListener(new EscuchadorRes());
 		cargaDatos();
 	}
-	
+
 	private class EscuchadorRes implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 			String carta;
 
 			carta = nombreTxt.getText();
 			if (ae.getActionCommand().equals("Buscar")) {
-				if(nombreTxt.getText()!=""){
-					listadoCartas= new ListadoCartas(listadoCartas.busqueda(nombreTxt.getText()));
+				if (nombreTxt.getText() != "") {
+					listadoCartas = new ListadoCartas(
+							listadoCartas.busqueda(nombreTxt.getText()));
 				}
 				BusquedaControlador yo = new BusquedaControlador(listadoCartas);
 				dispose();
@@ -34,9 +35,8 @@ public class InicioControlador extends InicioVista {
 			}
 		}
 	}
-	
-	public static void cargaDatos()
-	{
+
+	public static void cargaDatos() {
 
 		String linea, nombre, rareza, expansion, auxS;
 		int cantidad, cant;
@@ -48,32 +48,33 @@ public class InicioControlador extends InicioVista {
 
 		try {
 			lec = new Scanner(ent);
-		} catch (FileNotFoundException fnfe) {	
+		} catch (FileNotFoundException fnfe) {
 			System.err.println("ERROR" + fnfe);
 			System.exit(-1);
 		}
-		
+
 		linea = "";
-		while(lec.hasNextLine()) {
+		while (lec.hasNextLine()) {
 			linea = lec.nextLine();
-		//	System.out.println(linea);
-			//ver http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
+			// System.out.println(linea);
+			// ver
+			// http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
 			datosCarta = linea.split("\\+");
-			if (datosCarta.length == 5)
-			{
+			if (datosCarta.length == 5) {
 				nombre = datosCarta[0];
 				rareza = datosCarta[1];
 				expansion = datosCarta[2];
 				cantidad = Integer.parseInt(datosCarta[3]);
 				stEdi = datosCarta[4].equals("true");
-				listadoCartas.addCarta(nombre, rareza, expansion, stEdi, cantidad);
+				listadoCartas.addCarta(nombre, rareza, expansion, stEdi,
+						cantidad);
 			}
 		}
-		//System.out.print(listadoCartas.toString());
+		// System.out.print(listadoCartas.toString());
 		lec.close();
 	}
-	
-	public static void main(String [] args){
-			InicioControlador self=new InicioControlador();
-		}
+
+	public static void main(String[] args) {
+		InicioControlador self = new InicioControlador();
 	}
+}

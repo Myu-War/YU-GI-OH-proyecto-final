@@ -78,7 +78,8 @@ public class BusquedaControlador extends BusquedaVista {
 			if (ae.getActionCommand().equals("▲")) {
 				int k = 0, j = indiceCarta - (MAXCARTAS - 1);
 
-				if (indiceCarta >= InicioControlador.listadoCartas.getCartas().size() || btnsCartas[2].getText() == "---") {
+				if (indiceCarta >= InicioControlador.listadoCartas.getCartas()
+						.size() || btnsCartas[2].getText() == "---") {
 
 				} else {
 					ind1 = ind1 + 1;
@@ -100,7 +101,7 @@ public class BusquedaControlador extends BusquedaVista {
 			if (ae.getActionCommand().equals("▼")) {
 				int k = 0, j = indiceCarta - (MAXCARTAS + 1);
 
-				if (j < 0 || btnsCartas[2].getText() == "---")  {
+				if (j < 0 || btnsCartas[2].getText() == "---") {
 
 				} else {
 					// System.out.println("j: "+j);
