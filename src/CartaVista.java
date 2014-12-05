@@ -36,7 +36,7 @@ public class CartaVista extends JFrame {
 		this.add(p);
 		
 		//visualizacion
-		setBounds(500,100,350,600);
+		setBounds(500,50,350,670);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}

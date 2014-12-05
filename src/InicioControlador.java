@@ -23,10 +23,11 @@ public class InicioControlador extends InicioVista {
 
 			carta = nombreTxt.getText();
 			if (ae.getActionCommand().equals("Buscar")) {
-				listadoCartas= new ListadoCartas(listadoCartas.busqueda(nombreTxt.getText()));
+				if(nombreTxt.getText()==""){
+					listadoCartas= new ListadoCartas(listadoCartas.busqueda(nombreTxt.getText()));
+				}
 				BusquedaControlador yo = new BusquedaControlador(listadoCartas);
 				dispose();
-				System.out.print(listadoCartas.getCartas().toString());
 			}
 			if (ae.getActionCommand().equals("Añadir Carta(s)")) {
 				AñadirCartaControlador yo = new AñadirCartaControlador();

@@ -4,4 +4,5 @@ Giant Rat+comun+jk52+5+false
 Giant Rat+comun+jk52+5+false
 Junk Synchron+Secret Rare+LC5D-EN002 +2+true
 Summon Skull+super+DB1-EN142+2+true
-U.A. Midfielder+Rare+NECH-EN087+3+true
+Giant Rat+Ultra Parallel Rare+HL03-EN001+2+true
+Giant Rat+Secret Rare+LCYW-EN232+3+true
