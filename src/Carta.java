@@ -1,7 +1,3 @@
-/*Mario	
- * 27/11/2014
- */
-
 public class Carta implements Comparable<Carta> {
 	private String nombre;
 	private String rareza;
@@ -70,10 +66,6 @@ public class Carta implements Comparable<Carta> {
 		return id;
 	}
 
-	public void setID(int id) {
-		this.id = id;
-	}
-
 	public int compareTo(Carta otro) {
 		int res = -1;
 
@@ -100,7 +92,6 @@ public class Carta implements Comparable<Carta> {
 		} else {
 			cad.append("\nUnlimited\n");
 		}
-		cad.append("ID: " + id + "\n");
 
 		return cad.toString();
 	}

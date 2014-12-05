@@ -19,7 +19,7 @@ public class BusquedaVista extends JFrame {
 	protected JButton btnArriba = new JButton("▲");
 	protected JButton btnAbajo = new JButton("▼");
 	protected JLabel fantasma = new JLabel("");
-	protected final int MAXCARTAS = 5;
+	protected final int MAXCARTAS = 3;
 	protected JPanel p = new JPanel();
 	protected JButton[] btnsCartas = new JButton[MAXCARTAS];
 
@@ -57,9 +57,5 @@ public class BusquedaVista extends JFrame {
 		setBounds(300, 300, 350, 100 * MAXCARTAS);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		BusquedaVista yo = new BusquedaVista();
 	}
 }

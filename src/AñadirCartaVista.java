@@ -51,8 +51,4 @@ public class AñadirCartaVista extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
-
-	public static void main(String[] args) {
-		AñadirCartaVista yo = new AñadirCartaVista();
-	}
 }

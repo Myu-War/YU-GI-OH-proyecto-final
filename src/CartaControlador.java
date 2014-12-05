@@ -1,7 +1,4 @@
 import java.awt.event.ActionEvent;
-
-import javax.swing.*;
-
 import java.awt.event.ActionListener;
 
 public class CartaControlador extends CartaVista {
@@ -19,7 +16,6 @@ public class CartaControlador extends CartaVista {
 		public void actionPerformed(ActionEvent ae) {
 
 			if (ae.getActionCommand().equals("Vender")) {
-				// indicadorCarta=InicioControlador.listadoCartas.getNombreCarta(indice)
 				VenderCartaControlador yo = new VenderCartaControlador();
 			}
 			if (ae.getActionCommand().equals("Regresar")) {

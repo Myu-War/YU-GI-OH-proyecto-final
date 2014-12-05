@@ -1,7 +1,4 @@
 import java.awt.event.ActionEvent;
-
-import javax.swing.*;
-
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,12 +9,12 @@ public class InicioControlador extends InicioVista {
 
 	public InicioControlador() {
 		super();
-		buscar.addActionListener(new EscuchadorRes());
-		añadirC.addActionListener(new EscuchadorRes());
+		buscar.addActionListener(new Escuchador());
+		añadirC.addActionListener(new Escuchador());
 		cargaDatos();
 	}
 
-	private class EscuchadorRes implements ActionListener {
+	private class Escuchador implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 			String carta;
 
@@ -56,9 +53,6 @@ public class InicioControlador extends InicioVista {
 		linea = "";
 		while (lec.hasNextLine()) {
 			linea = lec.nextLine();
-			// System.out.println(linea);
-			// ver
-			// http://stackoverflow.com/questions/917822/tokenizing-error-java-util-regex-patternsyntaxexception-dangling-metacharacter
 			datosCarta = linea.split("\\+");
 			if (datosCarta.length == 5) {
 				nombre = datosCarta[0];
@@ -70,7 +64,6 @@ public class InicioControlador extends InicioVista {
 						cantidad);
 			}
 		}
-		// System.out.print(listadoCartas.toString());
 		lec.close();
 	}
 

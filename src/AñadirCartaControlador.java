@@ -13,11 +13,11 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 
 	public AñadirCartaControlador() {
 		super();
-		regresar.addActionListener(new EscuchadorB());
-		añadir.addActionListener(new EscuchadorB());
+		regresar.addActionListener(new Escuchador());
+		añadir.addActionListener(new Escuchador());
 	}
 
-	private class EscuchadorB implements ActionListener {
+	private class Escuchador implements ActionListener {
 		protected JOptionPane mensajeEmergente = new JOptionPane();
 
 		public void actionPerformed(ActionEvent ae) {
@@ -75,9 +75,5 @@ public class AñadirCartaControlador extends AñadirCartaVista {
 		} catch (IOException e) {
 		}
 		;
-	}
-
-	public static void main(String[] args) {
-		AñadirCartaControlador self = new AñadirCartaControlador();
 	}
 }

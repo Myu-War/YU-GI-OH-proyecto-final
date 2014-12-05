@@ -1,7 +1,3 @@
-/*Mario	
- * 28/11/2014
- */
-
 public class ListadoCartas {
 	private String titulo;
 	private ListaArregloOrdenada<Carta> cartas;
@@ -22,6 +18,12 @@ public class ListadoCartas {
 
 	public int getNumCartas() {
 		return cartas.size();
+	}
+
+	public String getNombreCarta(int indice) {
+
+		return this.cartas.get(indice).getNombre();
+
 	}
 
 	public ListaArregloOrdenada getCartas() {
@@ -71,12 +73,6 @@ public class ListadoCartas {
 		}
 
 		return res;
-	}
-
-	public String getNombreCarta(int indice) {
-
-		return this.cartas.get(indice).getNombre();
-
 	}
 
 	public int compareTo(ListadoCartas otro) {

@@ -35,9 +35,4 @@ public class InicioVista extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
-
-	public static void main(String[] args) {
-		InicioVista yo = new InicioVista();
-	}
-
 }

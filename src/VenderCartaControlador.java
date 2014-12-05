@@ -18,17 +18,18 @@ public class VenderCartaControlador extends VenderCartaVista {
 		public void actionPerformed(ActionEvent ae) {
 
 			if (ae.getActionCommand().equals("Vender")) {
-
-				mensajeEmergente.showMessageDialog(vender, "Carta Vendida");
-				dispose();
+				if (cantidadTxt.getText().equals("")) {
+					JOptionPane.showMessageDialog(vender,
+							"Llena todos los espacios", "ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(vender, "Carta Vendida");
+					dispose();
+				}
 			}
 			if (ae.getActionCommand().equals("Regresar")) {
 				dispose();
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-		VenderCartaControlador self = new VenderCartaControlador();
 	}
 }

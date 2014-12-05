@@ -1,15 +1,10 @@
 import java.awt.event.ActionEvent;
-
-import javax.swing.*;
-
 import java.awt.event.ActionListener;
 
 public class BusquedaControlador extends BusquedaVista {
-	// private int indiceCarta = 0;
 	protected String datosPrueba[] = { "Summon skull", "Giant Rat",
 			"Hane-hane", "Dark hole", "Soul charge", "Kuribo", "Dark Bribe" };
 	protected int indiceCarta = 0;
-	// public static String indicaExp;
 	private int ind1 = 0, ind2 = 1, ind3 = 2;
 
 	public BusquedaControlador() {
@@ -95,8 +90,6 @@ public class BusquedaControlador extends BusquedaVista {
 					}
 					indiceCarta++;
 				}
-				// System.out.println("j: "+j);
-				// System.out.println("indice: "+indiceCarta);
 			}
 			if (ae.getActionCommand().equals("▼")) {
 				int k = 0, j = indiceCarta - (MAXCARTAS + 1);
@@ -104,8 +97,6 @@ public class BusquedaControlador extends BusquedaVista {
 				if (j < 0 || btnsCartas[2].getText() == "---") {
 
 				} else {
-					// System.out.println("j: "+j);
-					// System.out.println("indice: "+indiceCarta);
 					ind1 = ind1 - 1;
 					ind2 = ind2 - 1;
 					ind3 = ind3 - 1;
@@ -119,9 +110,5 @@ public class BusquedaControlador extends BusquedaVista {
 				}
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-		BusquedaControlador self = new BusquedaControlador();
 	}
 }
