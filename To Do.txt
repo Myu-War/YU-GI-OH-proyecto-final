@@ -1,0 +1,6 @@
+To Do
+
+-Agregar una imagen
+
+-Aumentar cantidad de repetidos en lugar de instanciar
+

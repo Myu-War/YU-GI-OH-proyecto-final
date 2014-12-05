@@ -20,7 +20,7 @@ public class BusquedaVista extends JFrame {
 	protected JButton btnArriba = new JButton("▲");
 	protected JButton btnAbajo = new JButton("▼");
 	protected JLabel fantasma = new JLabel("");
-	protected final int MAXCARTAS = 3;
+	protected final int MAXCARTAS = 5;
 	protected JPanel p = new JPanel();
 	protected JButton[] btnsCartas = new JButton[MAXCARTAS];
 	
@@ -37,12 +37,12 @@ public class BusquedaVista extends JFrame {
 	     regresar.setBackground(java.awt.Color.cyan);
 	     btnArriba.setBackground(java.awt.Color.lightGray);
 	     btnAbajo.setBackground(java.awt.Color.lightGray);
-	     for(int i=0; i<3; i++){
+	     for(int i=0; i<MAXCARTAS; i++){
 	    	 btnsCartas[i].setBackground(java.awt.Color.white);
 	     }
 	     
 		// adiciona al contenedor: JPanel
-		p.setLayout(new GridLayout(7,1));
+		p.setLayout(new GridLayout(4+MAXCARTAS,1));
 		Border gap = BorderFactory.createEmptyBorder(10, 10, 10, 10);
 		p.setBorder(gap);
 		
@@ -57,7 +57,7 @@ public class BusquedaVista extends JFrame {
 		this.add(p);
 
 		// visualizacion
-		setBounds(300, 300, 350, 300);
+		setBounds(300, 300, 350, 100*MAXCARTAS);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
