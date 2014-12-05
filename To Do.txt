@@ -4,3 +4,4 @@ To Do
 
 -Aumentar cantidad de repetidos en lugar de instanciar
 
+-Hacer que al darle salir (X rojo) solo cierre esa ventana
