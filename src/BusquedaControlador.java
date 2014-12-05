@@ -78,7 +78,7 @@ public class BusquedaControlador extends BusquedaVista {
 			if (ae.getActionCommand().equals("▲")) {
 				int k = 0, j = indiceCarta - (MAXCARTAS - 1);
 
-				if (indiceCarta >= datosPrueba.length || btnsCartas[2].getText() == "---") {
+				if (indiceCarta >= InicioControlador.listadoCartas.getCartas().size() || btnsCartas[2].getText() == "---") {
 
 				} else {
 					ind1 = ind1 + 1;
