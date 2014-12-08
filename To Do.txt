@@ -4,6 +4,8 @@ To Do
 
 -Indicar que la ventana Vender tenga en el título tambien el nombre de la carta
 
+-Mejorar los botones genericos del arreglo de botones en Busqueda Vista y Controlador.
+
 -Cambiar a no editable el texto de CartaVista(o Controlador)
 
 -Agregar una imagen
